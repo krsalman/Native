@@ -1,5 +1,7 @@
 import React from 'react';
 import {Text, View ,StyleSheet, SafeAreaView, Dimensions} from 'react-native';
+import { connect } from 'react-redux';
+import 
 import Header from '../components/Header';
 import Button from '../components/button';
 import BlurInput from '../components/blurinput';
@@ -11,14 +13,17 @@ const imageWidth = dimensions.width;
 
 
 class Login extends React.Component {
+  onEmailChange(text){
+
+  }
   render(){
     return(
       <SafeAreaView style={styles.container}>
         <Header headerText="LOGIN FORM" />
           <View style={styles.content}>
-                <BlurInput tint={"dark"} intensity={80} imageWidth={imageWidth} placeholder={"Your email"} textContentType={"emailAddress"} placeholderTextColor={'rgba(255,255,255,0.4)'}></BlurInput>
+                <BlurInput onChangeText={this.onEmailChange.bind(this)} tint={"dark"} intensity={80} imageWidth={imageWidth} placeholder={"Your email"} textContentType={"emailAddress"} placeholderTextColor={'rgba(255,255,255,0.4)'}></BlurInput>
                 <BlurInput tint={"dark"} intensity={80} imageWidth={imageWidth} placeholder={"Your password"} secureTextEntry={true} placeholderTextColor={'rgba(255,255,255,0.4)'}></BlurInput>
-                <Button  firstColor={"#A573FF"} secondColor={"#645AFF"} textColor={"#FFFFFF"} imageWidth={imageWidth}>SIGN IN</Button>
+                <Button  firstColor={"#A573FF"} secondColor={"#645AFF"} textColor={"#FFFFFF"} imageWidth={imageWidth}>LOGIN</Button>
           </View>
       </SafeAreaView>
 
