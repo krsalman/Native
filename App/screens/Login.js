@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View ,StyleSheet, SafeAreaView, Dimensions} from 'react-native';
 import { connect } from 'react-redux';
-import 
+import { emailChanged } from '../actions';
 import Header from '../components/Header';
 import Button from '../components/button';
 import BlurInput from '../components/blurinput';
@@ -14,6 +14,7 @@ const imageWidth = dimensions.width;
 
 class Login extends React.Component {
   onEmailChange(text){
+    this.props.emailChanged
 
   }
   render(){
@@ -49,4 +50,4 @@ const styles = StyleSheet.create({
             }
   });
 
-export default Login;
+export default connect(null, { emailChanged })(Login);
